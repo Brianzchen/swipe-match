@@ -21,7 +21,7 @@ const Headline = ({
       display: 'flex',
       justifyContent: 'space-between',
       backgroundColor: secondary,
-      padding: '16px',
+      padding: '12px 16px',
     },
     dollar: {
       position: 'relative',

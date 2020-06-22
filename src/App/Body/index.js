@@ -4,15 +4,20 @@ import * as React from 'react';
 import Box from 'components/Box';
 import { background } from 'utils/colors';
 
+import Buttons from './Buttons';
 import Headline from './Headline';
 import JobTitle from './JobTitle';
 
 type PropsT = {
   data: JobMatchT,
+  accept: Function,
+  reject: Function,
 };
 
 const Body = ({
   data,
+  accept,
+  reject,
 }: PropsT): React.Node => {
   const styles = {
     container: {
@@ -44,6 +49,10 @@ const Body = ({
       <Headline
         distance={data.milesToTravel}
         wage={data.wagePerHourInCents / 100}
+      />
+      <Buttons
+        accept={accept}
+        reject={reject}
       />
     </Box>
   );

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import Body from '.';
 
@@ -34,7 +34,14 @@ describe('<Body />', () => {
       branch: 'Downtown',
       branchPhoneNumber: '2531233322',
     },
+    accept: jest.fn(),
+    reject: jest.fn(),
   };
+
+  afterEach(() => {
+    props.accept.mockClear();
+    props.reject.mockClear();
+  });
 
   it('renders the image', () => {
     const { getByTestId } = render(<Body {...props} />);
@@ -62,5 +69,21 @@ describe('<Body />', () => {
     const { getByTestId } = render(<Body {...props} />);
 
     expect(getByTestId('hourly-rate-value').textContent).toBe(`$${(props.data.wagePerHourInCents / 100).toFixed(2)}`);
+  });
+
+  it('rejects job', () => {
+    const { getByTestId } = render(<Body {...props} />);
+
+    fireEvent.click(getByTestId('reject-job-button'));
+
+    expect(props.reject).toHaveBeenCalled();
+  });
+
+  it('accepts job', () => {
+    const { getByTestId } = render(<Body {...props} />);
+
+    fireEvent.click(getByTestId('accept-job-button'));
+
+    expect(props.accept).toHaveBeenCalled();
   });
 });

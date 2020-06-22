@@ -27,6 +27,14 @@ const App = (): React.Node => {
     });
   }, []);
 
+  const accept = () => {
+    // End journey and show congrats
+  };
+
+  const reject = () => {
+    // Show next job or end journey and show sad face
+  };
+
   return (
     <Container data-testid="container">
       {profile && (
@@ -38,6 +46,8 @@ const App = (): React.Node => {
       {matches && (
         <Body
           data={matches[currJob]}
+          accept={accept}
+          reject={reject}
         />
       )}
     </Container>
