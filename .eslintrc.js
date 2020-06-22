@@ -31,6 +31,8 @@ module.exports = {
     'jsx-a11y/label-has-for': 0,
     'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
     'react/destructuring-assignment': 0,
+    'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': 0,
     'import/no-named-as-default': 0,
     'import/no-extraneous-dependencies': [

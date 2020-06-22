@@ -13,5 +13,6 @@
 [options]
 esproposal.optional_chaining=enable
 types_first=true
+module.name_mapper='^\([^\.].*\)$' -> '<PROJECT_ROOT>/src/\1'
 
 [strict]
