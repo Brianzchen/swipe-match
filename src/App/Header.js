@@ -37,7 +37,10 @@ const Header = ({
         alt="logo name"
         css={styles.logo}
       />
-      <Typography data-testid="header-name">
+      <Typography
+        data-testid="header-name"
+        variant="heading3"
+      >
         {`${firstName} ${lastName}`}
       </Typography>
     </Box>
