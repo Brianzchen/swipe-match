@@ -51,4 +51,16 @@ describe('<Body />', () => {
     expect(getByTestId('job-title').textContent).toBe(props.data.jobTitle.name);
     expect(getByTestId('job-company-name').textContent).toBe(props.data.company.name);
   });
+
+  it('displays the distance', () => {
+    const { getByTestId } = render(<Body {...props} />);
+
+    expect(getByTestId('distance-value').textContent).toBe(`${props.data.milesToTravel} miles`);
+  });
+
+  it('displays the hourly rate', () => {
+    const { getByTestId } = render(<Body {...props} />);
+
+    expect(getByTestId('hourly-rate-value').textContent).toBe(`$${(props.data.wagePerHourInCents / 100).toFixed(2)}`);
+  });
 });

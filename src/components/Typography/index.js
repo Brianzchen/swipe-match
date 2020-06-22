@@ -11,7 +11,9 @@ export type VariantT = |
   | 'heading1'
   | 'heading2'
   | 'heading3'
-  | 'button';
+  | 'button'
+  | 'displayTitle1'
+  | 'displayTitle2';
 
 type PropsT = {
   children?: React.Node,

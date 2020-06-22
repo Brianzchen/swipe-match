@@ -4,6 +4,7 @@ import * as React from 'react';
 import Box from 'components/Box';
 import { background } from 'utils/colors';
 
+import Headline from './Headline';
 import JobTitle from './JobTitle';
 
 type PropsT = {
@@ -39,6 +40,10 @@ const Body = ({
       <JobTitle
         title={data.jobTitle.name}
         name={data.company.name}
+      />
+      <Headline
+        distance={data.milesToTravel}
+        wage={data.wagePerHourInCents / 100}
       />
     </Box>
   );

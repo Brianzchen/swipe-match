@@ -18,15 +18,19 @@ export default (type: VariantT): FontDetailsT => {
     case 'body':
       return getFontDetails(14, 400);
     case 'label':
-      return getFontDetails(14, 600);
+      return getFontDetails(14, 700);
     case 'heading1':
-      return getFontDetails(20, 600);
+      return getFontDetails(20, 700);
     case 'heading2':
-      return getFontDetails(16, 600);
+      return getFontDetails(16, 700);
     case 'heading3':
       return getFontDetails(16, 400);
     case 'button':
       return getFontDetails(22, 400);
+    case 'displayTitle1':
+      return getFontDetails(32, 700);
+    case 'displayTitle2':
+      return getFontDetails(12, 700);
     default:
       return getFontDetails(14, 400);
   }
