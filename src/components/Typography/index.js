@@ -16,18 +16,28 @@ export type VariantT = |
 type PropsT = {
   children?: React.Node,
   variant?: VariantT,
+  css?: {
+    fontSize?: string,
+    fontWeight?: string,
+    lineHeight?: string,
+    ...
+  },
 };
 
 const Typography = ({
   children = null,
   variant = 'body',
+  css = {},
+  ...otherProps
 }: PropsT): React.Node => {
   const style = {
     ...genText(variant),
+    ...css,
   };
 
   return (
     <Box
+      {...otherProps}
       css={style}
     >
       {children}

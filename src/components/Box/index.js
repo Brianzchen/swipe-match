@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Element = styled.div(({
   css,
 }) => ({
+  display: 'block',
   boxSizing: 'border-box',
   ...css,
 }));

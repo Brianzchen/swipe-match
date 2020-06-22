@@ -4,6 +4,8 @@ import * as React from 'react';
 import Box from 'components/Box';
 import { background } from 'utils/colors';
 
+import JobTitle from './JobTitle';
+
 type PropsT = {
   data: JobMatchT,
 };
@@ -33,6 +35,10 @@ const Body = ({
         src={data.jobTitle.imageUrl}
         alt="job image"
         css={styles.image}
+      />
+      <JobTitle
+        title={data.jobTitle.name}
+        name={data.company.name}
       />
     </Box>
   );

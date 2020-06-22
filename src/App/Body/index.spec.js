@@ -44,4 +44,11 @@ describe('<Body />', () => {
     expect(image.src).toBe(props.data.jobTitle.imageUrl);
     expect(image.alt).toBe('job image');
   });
+
+  it('renders job title', () => {
+    const { getByTestId } = render(<Body {...props} />);
+
+    expect(getByTestId('job-title').textContent).toBe(props.data.jobTitle.name);
+    expect(getByTestId('job-company-name').textContent).toBe(props.data.company.name);
+  });
 });
