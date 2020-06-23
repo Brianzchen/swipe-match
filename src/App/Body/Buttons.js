@@ -22,7 +22,9 @@ const Buttons = ({
     },
     button: {
       flex: 1,
-      margin: '0 4px',
+      ':last-child': {
+        marginLeft: '8px',
+      },
     },
   };
 
