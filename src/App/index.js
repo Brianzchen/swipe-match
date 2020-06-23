@@ -3,6 +3,7 @@ import * as React from 'react';
 import ConfettiGenerator from 'confetti-js';
 
 import Box from 'components/Box';
+import MessageModal from 'components/MessageModal';
 import {
   getProfile,
   getMatches,
@@ -20,12 +21,13 @@ const App = (): React.Node => {
   const [currJob, setCurrJob] = React.useState<number>(0);
   const [matches, setMatches] = React.useState();
   const [jobAccepted, setJobAccepted] = React.useState(false);
+  const [noJobsLeft, setNoJobsLeft] = React.useState(false);
 
   const showNextJob = () => {
     if (matches && currJob !== matches.length - 1) {
       setCurrJob((pJob) => pJob + 1);
     } else {
-      // no more jobs
+      setNoJobsLeft(true);
     }
   };
 
@@ -101,6 +103,16 @@ const App = (): React.Node => {
         id="my-canvas"
         css={styles.confetti}
       />
+      {jobAccepted && (
+        <MessageModal>
+          You got the job!
+        </MessageModal>
+      )}
+      {noJobsLeft && (
+        <MessageModal>
+          There are no more jobs available, better luck next time :(
+        </MessageModal>
+      )}
     </>
   );
 };
