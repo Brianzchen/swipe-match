@@ -5,11 +5,13 @@ import Box from 'components/Box';
 import Button from 'components/Button';
 
 type PropsT = {
+  jobId: string,
   accept: Function,
   reject: Function,
 };
 
 const Buttons = ({
+  jobId,
   accept,
   reject,
 }: PropsT): React.Node => {
@@ -32,7 +34,7 @@ const Buttons = ({
         data-testid="reject-job-button"
         css={styles.button}
         variant="secondary"
-        onClick={reject}
+        onClick={() => reject(jobId)}
       >
         No Thanks
       </Button>
@@ -40,7 +42,7 @@ const Buttons = ({
         data-testid="accept-job-button"
         css={styles.button}
         variant="primary"
-        onClick={accept}
+        onClick={() => accept(jobId)}
       >
         {'I\'ll Take it'}
       </Button>

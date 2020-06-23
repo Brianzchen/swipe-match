@@ -51,6 +51,7 @@ const Body = ({
         wage={data.wagePerHourInCents / 100}
       />
       <Buttons
+        jobId={data.jobId}
         accept={accept}
         reject={reject}
       />

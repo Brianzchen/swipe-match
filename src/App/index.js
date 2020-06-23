@@ -2,7 +2,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { getProfile, getMatches } from 'utils/service';
+import {
+  getProfile,
+  getMatches,
+  acceptJob,
+  rejectJob,
+} from 'utils/service';
 
 import Body from './Body';
 import Header from './Header';
@@ -15,8 +20,16 @@ const Container = styled.div`
 
 const App = (): React.Node => {
   const [profile, setProfile] = React.useState<ProfileT | void>();
-  const [currJob] = React.useState<number>(0);
+  const [currJob, setCurrJob] = React.useState<number>(0);
   const [matches, setMatches] = React.useState();
+
+  const showNextJob = () => {
+    if (matches && currJob !== matches.length - 1) {
+      setCurrJob((pJob) => pJob + 1);
+    } else {
+      // no more jobs
+    }
+  };
 
   React.useEffect(() => {
     getProfile(userId).then((res) => {
@@ -27,11 +40,22 @@ const App = (): React.Node => {
     });
   }, []);
 
-  const accept = () => {
-    // End journey and show congrats
+  const accept = (jobId) => {
+    acceptJob(userId, jobId).then(() => {
+      // show congrats
+    }).catch((err) => {
+      console.log(err.message);
+      // set banner with error and show next job
+      showNextJob();
+    });
   };
 
-  const reject = () => {
+  const reject = (jobId) => {
+    rejectJob(userId, jobId).then(() => {
+      showNextJob();
+    }).catch(() => {
+      showNextJob();
+    });
     // Show next job or end journey and show sad face
   };
 
