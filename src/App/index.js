@@ -67,6 +67,8 @@ const App = (): React.Node => {
 
   const styles = {
     container: {
+      display: 'flex',
+      flexDirection: 'column',
       height: '100%',
       pointerEvents: jobAccepted ? 'none' : 'auto',
     },
