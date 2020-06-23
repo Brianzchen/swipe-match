@@ -11,6 +11,7 @@ import {
   rejectJob,
 } from 'utils/service';
 
+import Banner from './Banner';
 import Body from './Body';
 import Header from './Header';
 
@@ -20,6 +21,7 @@ const App = (): React.Node => {
   const [profile, setProfile] = React.useState<ProfileT | void>();
   const [currJob, setCurrJob] = React.useState<number>(0);
   const [matches, setMatches] = React.useState();
+  const [error, setError] = React.useState<string | void>();
   const [jobAccepted, setJobAccepted] = React.useState(false);
   const [noJobsLeft, setNoJobsLeft] = React.useState(false);
 
@@ -41,6 +43,7 @@ const App = (): React.Node => {
   }, []);
 
   const accept = (jobId) => {
+    setError();
     acceptJob(userId, jobId).then(() => {
       if (!jobAccepted) {
         setJobAccepted(true);
@@ -51,18 +54,20 @@ const App = (): React.Node => {
         const confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
       }
-    }).catch(() => {
+    }).catch((err) => {
+      setError(err.message);
       showNextJob();
     });
   };
 
   const reject = (jobId) => {
+    setError();
     rejectJob(userId, jobId).then(() => {
       showNextJob();
-    }).catch(() => {
+    }).catch((err) => {
+      setError(err.message);
       showNextJob();
     });
-    // Show next job or end journey and show sad face
   };
 
   const styles = {
@@ -91,6 +96,11 @@ const App = (): React.Node => {
             firstName={profile.firstName}
             lastName={profile.lastName}
           />
+        )}
+        {error && (
+          <Banner>
+            {error}
+          </Banner>
         )}
         {matches && (
           <Body
