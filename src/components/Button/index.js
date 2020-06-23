@@ -28,6 +28,7 @@ const Button = ({
     borderRadius: '4px',
     padding: '16px',
     outline: 'none',
+    cursor: 'pointer',
   };
 
   return (

@@ -26,6 +26,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
+    "confetti-js": "^0.0.18",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
