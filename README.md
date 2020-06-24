@@ -19,10 +19,14 @@ yarn start
 - yarn flow (type checker)
 - yarn analyze (bundle size)
 
-### UX misalignments
+## UX misalignments
 
 - Spacing has been guessed but follows 8px grid
 - Design icons not available, using material design icons
 - Font chosen was Google's Noto
 - Colors were approximated with browser inspect tools
 - Font sizes were guessed and used relatively across the application
+
+---
+
+Bootstrapped with my personal template https://github.com/Brianzchen/react-template
