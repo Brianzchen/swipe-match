@@ -36,7 +36,7 @@ const Headline = ({
       <Column
         testid="distance"
         label="Distance"
-        value={`${distance} miles`}
+        value={`${distance.toFixed(1)} miles`}
       />
       <Column
         testid="hourly-rate"

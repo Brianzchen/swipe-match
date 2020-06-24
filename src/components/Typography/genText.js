@@ -31,6 +31,8 @@ export default (type: VariantT): FontDetailsT => {
       return getFontDetails(32, 700);
     case 'displayTitle2':
       return getFontDetails(12, 700);
+    case 'metadata':
+      return getFontDetails(12, 400);
     default:
       return getFontDetails(14, 400);
   }

@@ -13,7 +13,8 @@ export type VariantT = |
   | 'heading3'
   | 'button'
   | 'displayTitle1'
-  | 'displayTitle2';
+  | 'displayTitle2'
+  | 'metadata';
 
 type PropsT = {
   children?: React.Node,

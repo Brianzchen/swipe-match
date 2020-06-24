@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { lorem } from 'faker';
 
-import ListItem from './ListItem';
+import ListItem from '.';
 
 describe('<ListItem />', () => {
   it('renders prefix', () => {

@@ -2,12 +2,14 @@
 import * as React from 'react';
 
 import Box from 'components/Box';
+import ListItem from 'components/ListItem';
 import { background } from 'utils/colors';
 
 import Buttons from './Buttons';
 import Headline from './Headline';
 import JobTitle from './JobTitle';
-import ListItem from './ListItem';
+import Location from './Location';
+import ShiftDates from './ShiftDates';
 
 type PropsT = {
   data: JobMatchT,
@@ -61,13 +63,18 @@ const Body = ({
           <ListItem
             prefixIcon="calendar"
           >
-            test
+            <ShiftDates
+              shifts={data.shifts}
+            />
           </ListItem>
           <ListItem
             prefixIcon="map-marker"
             suffixIcon="chevron-right"
           >
-            test
+            <Location
+              location={data.company.address.formattedAddress}
+              distance={data.milesToTravel}
+            />
           </ListItem>
           <ListItem
             prefixIcon="hammer-screwdriver"
