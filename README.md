@@ -1,22 +1,28 @@
-# react-template
+# Swipe Match
 
 ## About
 
-This project is intended to be a quick start pack if I ever want to jump into creating something new and don't want to set it up every time. It has all the basics you need to get started.
-
-This more or less replicates what `create-react-app` does but my preference is to build the setup myself.
-
-Redux is not included with this package, because although it's a great library, it's not necessary for all projects.
+Once started, you can either accept or reject a job. Once your journey completes you will be prompted with a message whereby you can refresh the page to try the journey again.
 
 ## Getting started
 
-Install dependencies with `npm install` or `yarn`.
+```
+nvm install # or `nvm use`
+yarn
+yarn start
+```
 
-Start the web-server with `npm start` or `yarn start`.
-And run `npm run build` or `yarn build` to create a build for distribution.
+## Sanity checks
 
-## Footnote
+- yarn test (test)
+- yarn lint (code format)
+- yarn flow (type checker)
+- yarn analyze (bundle size)
 
-If you like what you see, please drop me a star, it shows me people are interested and that I should continue to always keep this project up to date.
+### UX misalignments
 
-Also if you have any trouble getting started or you think there's a feature this app should come with from the beginning, feel free to create an issue.
+- Spacing has been guessed but follows 8px grid
+- Design icons not available, using material design icons
+- Font chosen was Google's Noto
+- Colors were approximated with browser inspect tools
+- Font sizes were guessed and used relatively across the application
