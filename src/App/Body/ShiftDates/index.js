@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import Typography from 'components/Typography';
 
+import getDateRange from './getDateRange';
+
 type PropsT = {
   shifts: Array<{
     endDate: string,
@@ -21,7 +23,7 @@ const ShiftDates = ({
     </Typography>
     {shifts.map(({ startDate, endDate }) => (
       <Typography key={`${startDate}-${endDate}`}>
-        {`${new Date(startDate).toLocaleTimeString()} - ${new Date(endDate).toLocaleTimeString()}`}
+        {getDateRange(startDate, endDate)}
       </Typography>
     ))}
   </>

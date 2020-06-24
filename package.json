@@ -27,6 +27,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "confetti-js": "^0.0.18",
+    "date-fns": "^2.14.0",
+    "date-fns-tz": "^1.0.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
