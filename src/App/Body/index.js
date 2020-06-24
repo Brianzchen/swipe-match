@@ -9,6 +9,8 @@ import Buttons from './Buttons';
 import Headline from './Headline';
 import JobTitle from './JobTitle';
 import Location from './Location';
+import ReportsTo from './ReportsTo';
+import Requirements from './Requirements';
 import ShiftDates from './ShiftDates';
 
 type PropsT = {
@@ -76,15 +78,20 @@ const Body = ({
               distance={data.milesToTravel}
             />
           </ListItem>
-          <ListItem
-            prefixIcon="hammer-screwdriver"
-          >
-            test
-          </ListItem>
+          {data.requirements && (
+            <ListItem
+              prefixIcon="hammer-screwdriver"
+            >
+              <Requirements items={data.requirements} />
+            </ListItem>
+          )}
           <ListItem
             prefixIcon="account-circle"
           >
-            test
+            <ReportsTo
+              name={data.company.reportTo.name}
+              phone={data.company.reportTo.phone}
+            />
           </ListItem>
         </Box>
         <Buttons

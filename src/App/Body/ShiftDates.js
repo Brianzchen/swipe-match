@@ -19,9 +19,9 @@ const ShiftDates = ({
     >
       Shift Dates
     </Typography>
-    {shifts.map((o) => (
-      <Typography>
-        {`${new Date(o.startDate).toLocaleTimeString()} - ${new Date(o.endDate).toLocaleTimeString()}`}
+    {shifts.map(({ startDate, endDate }) => (
+      <Typography key={`${startDate}-${endDate}`}>
+        {`${new Date(startDate).toLocaleTimeString()} - ${new Date(endDate).toLocaleTimeString()}`}
       </Typography>
     ))}
   </>

@@ -21,7 +21,7 @@ declare type JobMatchT = {
     name: string,
     reportTo: {
       name: string,
-      phone: string,
+      phone?: string,
     },
   },
   jobId: string,
@@ -34,6 +34,7 @@ declare type JobMatchT = {
     endDate: string,
     startDate: string,
   }>,
+  requirements?: Array<string>,
   wagePerHourInCents: number,
 };
 
