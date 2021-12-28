@@ -1,0 +1,6 @@
+{
+  "appId": "com.swipe.match",
+  "appName": "Swipe Match",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
